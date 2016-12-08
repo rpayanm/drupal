@@ -1,0 +1,11 @@
+### Oficiales
+deb http://ftp.debian.org/debian/ jessie main contrib non-free
+
+### Seguridad
+deb http://security.debian.org/ jessie/updates main contrib non-free
+
+### wheezy-updates
+deb http://ftp.debian.org/debian jessie-updates main contrib non-free
+
+### Backports
+deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
