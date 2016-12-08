@@ -71,6 +71,9 @@ COPY ./files/supervisord.conf /etc/supervisor/conf.d/
 # Drupal private folder
 RUN mkdir /mnt/private/
 
+COPY ./files/start.sh /start.sh
+RUN chmod 755 /start.sh
+
 RUN rm -R /tmp/*
 
 EXPOSE 80 22
