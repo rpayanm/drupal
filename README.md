@@ -12,6 +12,12 @@ $ docker create --name web_data -v /var/lib/mysql busybox
 $ docker run -d -p 3306:3306 --name mariadb --volumes-from web_data -e MYSQL_ROOT_PASSWORD=toor mariadb:latest
 $ docker run -d -p 8022:22 -p 80:80 --name web -v $PWD/nginx:/etc/nginx/sites-enabled -v $PWD/www:/var/www/html --link mariadb rpayanm/drupal
 ```
+`$ sudo nano /etc/hosts`
+
+Put in:
+
+`127.0.0.1 mariadb`
+
 # Create a new site
 `$ cd /home/$USER/drupal/www`
 
