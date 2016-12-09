@@ -76,5 +76,5 @@ RUN chmod 755 /start.sh
 
 RUN rm -R /tmp/*
 
-EXPOSE 80 22
+EXPOSE 80
 CMD ["/bin/bash", "/start.sh"]
