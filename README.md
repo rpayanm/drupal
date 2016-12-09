@@ -2,6 +2,8 @@
 Docker Image with Nginx and PHP-FPM for Drupal development.
 
 # Get started
+1. [Install docker](https://docs.docker.com/engine/installation/)
+2. Download the containers
 ```
 $ cd /home/$USER
 $ git clone https://github.com/rpayanm/drupal.git
