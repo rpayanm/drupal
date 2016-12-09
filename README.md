@@ -14,7 +14,7 @@ $ docker run -d -p 8022:22 -p 80:80 --name web -v $PWD/nginx:/etc/nginx/sites-en
 ```
 `$ sudo nano /etc/hosts`
 
-Put in:
+Add:
 
 `127.0.0.1 mariadb`
 
