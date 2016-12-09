@@ -73,7 +73,7 @@ pass: toor
 ```
 Install a client for mysql
 
-`$ apt-get install mariabd-client`
+`$ apt-get install mariadb-client`
 
 Connect to mariadb server:
 
