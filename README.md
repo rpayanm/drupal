@@ -51,6 +51,8 @@ Add to `/etc/host`:
 
 `127.0.0.1 <site>.local`
 
+**Note**: Replace wherever `<site>` appears with the name of your site
+
 In settings.php:
 
 ```
