@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Rolando Payán Mosqueda <rpayanm@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
-# Resositories
+# Repositories
 COPY ./files/sources.list /etc/apt/
 
 # Install packages
