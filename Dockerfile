@@ -10,6 +10,7 @@ RUN apt-get update \
 && apt-get install -y \
 	nano \
 	locate \
+	git \
 	nginx \
 	php7-dev \
 	php7-fpm \
