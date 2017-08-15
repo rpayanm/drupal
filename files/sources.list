@@ -1,11 +1,11 @@
 ### Oficiales
-deb http://ftp.debian.org/debian/ stretch main contrib non-free
+deb http://deb.debian.org/debian stretch main contrib non-free
 
 ### Seguridad
-deb http://security.debian.org/ stretch/updates main contrib non-free
+deb http://security.debian.org stretch/updates main contrib non-free
 
-### wheezy-updates
-deb http://ftp.debian.org/debian stretch-updates main contrib non-free
+### stretch-updates
+deb http://deb.debian.org/debian stretch-updates main contrib non-free
 
 ### Backports
-deb http://ftp.debian.org/debian/ stretch-backports main contrib non-free
+deb http://deb.debian.org/debian stretch-backports main contrib non-free
