@@ -41,15 +41,6 @@ server {
   include snippets/drupal-7-8.conf;
 }
 ```
-For drupal 6:
-```
-server {
-  server_name <site>.local;
-  root /var/www/html/<site>;
-
-  include snippets/drupal-6.conf;
-}
-```
 Reload nginx:
 
 `$ docker exec web service nginx reload`
@@ -60,7 +51,7 @@ Add to `/etc/host`:
 
 `127.0.0.1 <site>.local`
 
-**Note**: Replace wherever `<site>` appears with the name of your site
+**Note**: Replace wherever `<site>` appears with the machine name of your site
 
 In settings.php:
 
