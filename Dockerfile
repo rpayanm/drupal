@@ -23,16 +23,6 @@ RUN apt-get update \
 	bash-completion \
 && apt-get clean
 
-apt-get install -y \
-	git \
-	nginx \
-	php7.0-dev \
-	php7.0-fpm \
-	php7.0-cli \
-	php7.0-mysql \
-	php7.0-gd \
-	bash-completion \
-
 # PHP custom configuration
 # php5-fpm
 RUN sed -i "s#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#" /etc/php/7.0/fpm/php.ini \
