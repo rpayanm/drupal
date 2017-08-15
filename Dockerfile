@@ -24,8 +24,9 @@ RUN apt-get update \
 && apt-get clean
 
 # PHP custom configuration
-# php5-fpm
-RUN sed -i "s#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#" /etc/php/7.0/fpm/php.ini \
+# php-fpm7.0
+RUN mkdir -p /var/run/php \
+&& sed -i "s#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#" /etc/php/7.0/fpm/php.ini \
 && sed -i "s#display_errors = Off#display_errors = On#" /etc/php/7.0/fpm/php.ini \
 && sed -i "s#memory_limit = 128M#memory_limit = 512M#" /etc/php/7.0/fpm/php.ini \
 && sed -i "s#memory_limit = 128M#memory_limit = 512M#" /etc/php/7.0/fpm/php.ini \
@@ -64,7 +65,7 @@ COPY ./files/drupal* /etc/nginx/snippets/
 COPY ./files/autocomplete /tmp/
 RUN cat /tmp/autocomplete >> /root/.bashrc && /bin/bash -c "source /root/.bashrc"
 
-# Setup Supervisor.
+# Setup Supervisor
 COPY ./files/supervisord.conf /etc/supervisor/conf.d/
 
 # Drupal private folder
