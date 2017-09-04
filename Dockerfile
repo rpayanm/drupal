@@ -19,6 +19,7 @@ RUN apt-get update \
 	php7.0-mysql \
 	php7.0-gd \
 	php7.0-curl \
+	php7.0-soap \
 	curl \
 	supervisor \
 	bash-completion \
