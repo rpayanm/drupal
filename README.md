@@ -81,4 +81,14 @@ Connect to mariadb server:
 
 `$ mysql -uroot -p -h127.0.0.1`
 
+# Portainer
+[Portainer](https://portainer.io) is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters 
 
+To have this:
+
+1. Run in terminal:
+```
+$ docker run -d -p 1000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer:/data portainer/portainer --no-auth
+```
+
+2. Open the browser and copy http://127.0.0.1:1000
