@@ -13,6 +13,7 @@ RUN apt-get update \
 	locate \
 	git \
 	nginx \
+	php7.0 \
 	php7.0-dev \
 	php7.0-fpm \
 	php7.0-cli \
@@ -49,7 +50,7 @@ RUN cd /tmp \
  && make \
  && make install
 
-# Xdebug settings for php5-fpm
+# Xdebug settings for php7-fpm
 COPY ./files/xdebug.ini /tmp/
 RUN cat /tmp/xdebug.ini >> /etc/php/7.0/fpm/php.ini \
 && export XDEBUG_SOURCE=`find /usr/lib -name "xdebug.so"` \
