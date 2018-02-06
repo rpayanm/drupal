@@ -22,6 +22,7 @@ RUN apt-get update \
 	php7.0-curl \
 	php7.0-soap \
 	curl \
+	golang \
 	supervisor \
 	bash-completion \
 && apt-get clean
@@ -64,12 +65,10 @@ RUN cat /tmp/xdebug.ini >> /etc/php/7.0/cli/php.ini \
 # nginx
 COPY ./files/drupal* /etc/nginx/snippets/
 
-# Mailhog
-RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
-ENV PATH /usr/local/go/bin:$PATH
+# mhsendmail with Mailhog
 RUN go get github.com/mailhog/mhsendmail
-RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
-RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /etc/php/7.0/fpm/php.ini
+&& cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
+&& echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /etc/php/7.0/fpm/php.ini
 
 # autocomplete in root
 COPY ./files/autocomplete /tmp/
