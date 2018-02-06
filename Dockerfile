@@ -66,8 +66,8 @@ RUN cat /tmp/xdebug.ini >> /etc/php/7.0/cli/php.ini \
 COPY ./files/drupal* /etc/nginx/snippets/
 
 # mhsendmail with Mailhog
-RUN go get github.com/mailhog/mhsendmail
-&& cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
+RUN go get github.com/mailhog/mhsendmail \
+&& cp /root/go/bin/mhsendmail /usr/bin/mhsendmail \
 && echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /etc/php/7.0/fpm/php.ini
 
 # autocomplete in root
