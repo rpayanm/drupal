@@ -64,6 +64,13 @@ RUN cat /tmp/xdebug.ini >> /etc/php/7.0/cli/php.ini \
 # nginx
 COPY ./files/drupal* /etc/nginx/snippets/
 
+# Mailhog
+RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
+ENV PATH /usr/local/go/bin:$PATH
+RUN go get github.com/mailhog/mhsendmail
+RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
+RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /etc/php/7.0/fpm/php.ini
+
 # autocomplete in root
 COPY ./files/autocomplete /tmp/
 RUN cat /tmp/autocomplete >> /root/.bashrc && /bin/bash -c "source /root/.bashrc"

@@ -13,13 +13,17 @@ $ git clone https://github.com/rpayanm/drupal.git
 $ cd drupal
 $ docker create --name web_data -v /var/lib/mysql busybox
 $ docker run -d -p 3306:3306 --name mariadb --volumes-from web_data -e MYSQL_ROOT_PASSWORD=toor mariadb:latest
-$ docker run -d -p 8022:22 -p 80:80 --name web -v $PWD/nginx:/etc/nginx/sites-enabled -v $PWD/www:/var/www/html --link mariadb rpayanm/drupal
+$ docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog
+$ docker run -d -p 8022:22 -p 80:80 --name web -v $PWD/nginx:/etc/nginx/sites-enabled -v $PWD/www:/var/www/html --link mariadb --link mailhog rpayanm/drupal
 ```
 `$ sudo nano /etc/hosts`
 
 Add:
 
-`127.0.0.1 mariadb`
+```
+127.0.0.1 mariadb
+127.0.0.1 mailhog
+```
 
 # Create a new site
 `$ cd /home/$USER/drupal/www`
@@ -80,6 +84,10 @@ Install a client for mysql
 Connect to mariadb server:
 
 `$ mysql -uroot -p -h127.0.0.1`
+
+# Mailhog
+We used  [MailHog](https://github.com/mailhog/MailHog) is an email testing tool for developers. Web and API based SMTP testing.
+You can check in your browser copying on it this url: http://127.0.0.1:8025
 
 # Portainer
 [Portainer](https://portainer.io) is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters 
