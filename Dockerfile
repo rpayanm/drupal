@@ -69,7 +69,7 @@ COPY ./files/drupal* /etc/nginx/snippets/
 ENV GOPATH /tmp/go
 RUN go get github.com/mailhog/mhsendmail \
 && cp /tmp/go/bin/mhsendmail /usr/bin/mhsendmail \
-&& echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /etc/php/7.0/fpm/php.ini
+&& echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' >> /etc/php/7.0/fpm/php.ini
 
 # autocomplete in root
 COPY ./files/autocomplete /tmp/
