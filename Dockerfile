@@ -79,7 +79,8 @@ RUN cat /tmp/autocomplete >> /root/.bashrc && /bin/bash -c "source /root/.bashrc
 COPY ./files/supervisord.conf /etc/supervisor/conf.d/
 
 # Drupal private folder
-RUN mkdir /mnt/private/
+RUN mkdir /mnt/private/ \
+&& chown www-data:wwww-data -R /mnt/private
 
 COPY ./files/start.sh /start.sh
 RUN chmod 755 /start.sh
