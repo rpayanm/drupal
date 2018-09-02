@@ -21,6 +21,7 @@ RUN apt-get update \
 	php7.0-gd \
 	php7.0-curl \
 	php7.0-soap \
+	php7.0-bcmath \
 	curl \
 	golang \
 	supervisor \
@@ -80,10 +81,12 @@ COPY ./files/supervisord.conf /etc/supervisor/conf.d/
 
 # Drupal private folder
 RUN mkdir /mnt/private/ \
-&& chown www-data:wwww-data -R /mnt/private
+&& chown wwww-data -R /mnt/private
 
 COPY ./files/start.sh /start.sh
 RUN chmod 755 /start.sh
+
+WORKDIR /var/www/html
 
 RUN rm -R /tmp/*
 
