@@ -100,3 +100,5 @@ $ docker run -d -p 1000:9000 --name portainer --restart always -v /var/run/docke
 ```
 
 2. Open the browser and copy http://127.0.0.1:1000
+
+3. Choose local endpoint. It is the first option.
