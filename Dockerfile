@@ -81,7 +81,7 @@ COPY ./files/supervisord.conf /etc/supervisor/conf.d/
 
 # Drupal private folder
 RUN mkdir /mnt/private/ \
-&& chown wwww-data -R /mnt/private
+&& chown www-data -R /mnt/private
 
 COPY ./files/start.sh /start.sh
 RUN chmod 755 /start.sh
