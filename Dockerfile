@@ -37,6 +37,7 @@ RUN mkdir -p /var/run/php \
 && sed -i "s#memory_limit = 128M#memory_limit = 512M#" /etc/php/7.0/fpm/php.ini \
 && sed -i "s#;always_populate_raw_post_data = -1#always_populate_raw_post_data = -1#" /etc/php/7.0/fpm/php.ini \
 && sed -i "s#post_max_size = 8M#post_max_size = 100M#" /etc/php/7.0/fpm/php.ini \
+&& sed -i "s#max_execution_time = 30#max_execution_time = 60#" /etc/php/7.0/fpm/php.ini \
 # CLI
 && sed -i "s#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#" /etc/php/7.0/cli/php.ini \
 && sed -i "s#display_errors = Off#display_errors = On#" /etc/php/7.0/cli/php.ini \
