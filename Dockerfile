@@ -22,6 +22,7 @@ RUN apt-get update \
 	php7.0-curl \
 	php7.0-soap \
 	php7.0-bcmath \
+	php7.0-mbstring \
 	curl \
 	golang \
 	supervisor \
