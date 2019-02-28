@@ -39,6 +39,7 @@ RUN apt-get update \
     php7.1-soap \
     php7.1-bcmath \
     php7.1-mbstring \
+    php7.1-xml \
 && apt-get clean
 
 # PHP custom configuration
