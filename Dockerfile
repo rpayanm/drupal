@@ -47,7 +47,7 @@ RUN apt-get update \
 RUN mkdir -p /var/run/php \
 && sed -i "s#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#" /etc/php/7.1/fpm/php.ini \
 && sed -i "s#display_errors = Off#display_errors = On#" /etc/php/7.1/fpm/php.ini \
-&& sed -i "s#memory_limit = 128M#memory_limit = 512M#" /etc/php/7.1/fpm/php.ini \
+&& sed -i "s#memory_limit = 128M#memory_limit = 1024M#" /etc/php/7.1/fpm/php.ini \
 # Eliminada en PHP 7.0
 #&& sed -i "s#;always_populate_raw_post_data = -1#always_populate_raw_post_data = -1#" /etc/php/7.1/fpm/php.ini \
 && sed -i "s#upload_max_filesize = 2M#upload_max_filesize = 100M#" /etc/php/7.1/fpm/php.ini \
