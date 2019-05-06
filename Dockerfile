@@ -61,7 +61,7 @@ RUN mkdir -p /var/run/php \
 
 # XDebug
 RUN cd /tmp \
- && git clone https://github.com/derickr/xdebug \
+ && git clone https://github.com/xdebug/xdebug \
  && cd xdebug \
  && phpize \
  && ./configure --enable-xdebug \
